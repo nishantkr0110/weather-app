@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="font-sans text-white bg-black">
+  <div class="relative min-h-screen transition-opacity duration-500 bg-center bg-no-repeat bg-cover opacity-100 weather-app " style="background-image: url('./Images/day/cloudy.jpg');">
+    <div class="absolute inset-0 z-0 bg-black bg-opacity-30"></div>
+
+    <div class="container absolute inset-0 z-10 flex flex-col items-start justify-between p-8">
+      <div class="flex items-center justify-center">
+        <h3 class="mr-4 text-2xl font-normal">Weather App</h3>
+        <h1 class="mr-4 font-normal temp text-7xl">16&#176;</h1>
+        <div class="mr-4 city-time">
+          <h1 class="mb-1 text-4xl name">New Delhi</h1>
+          <small class="text-sm">
+            <span class="time">08:08</span> -
+            <span class="date">Friday Jun 6</span>
+          </small>
+        </div>
+        <div class="text-center weather">
+          <img src="./Images/sunny.png" class="mx-auto my-2 icon" height="50" width="50" alt=""..>
+          <span class="block condition">Sunny</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute top-0 right-0 z-10 w-2/5 h-full p-8 overflow-y-auto bg-white border border-white shadow-lg panel bg-opacity-10 backdrop-blur-md border-opacity-20">
+      <form id="locationInput" class="relative mb-12">
+        <input type="text" class="w-4/5 py-2 pr-4 text-lg text-white placeholder-gray-400 bg-transparent border-b border-gray-300 search focus:outline-none" placeholder="Search Location..." />
+        <button type="submit" class="absolute top-0 right-0 px-6 py-3 text-lg text-white transition bg-orange-600 submit hover:bg-white hover:text-black">
+          <i class="fas fa-search"></i>
+        </button>
+      </form>
+      <button type="button" id="getLocationBtn" class="w-full px-6 py-3 mb-6 text-lg text-white transition bg-blue-600 hover:bg-white hover:text-black">Use My Current Location</button>
+
+      <ul class="pb-4 mb-8 space-y-6 text-gray-300 border-b border-gray-300 cities">
+        <li class="cursor-pointer city hover:text-white">New Delhi</li>
+        <li class="cursor-pointer city hover:text-white">Mumbai</li>
+        <li class="cursor-pointer city hover:text-white">Manali</li>
+        <li class="cursor-pointer city hover:text-white">Jaipur</li>
+      </ul>
+
+      <ul class="pb-4 mb-8 text-gray-300 border-b border-gray-300 details">
+        <h4 class="my-8 text-xl text-white">Weather Details</h4>
+        <li class="flex items-center justify-between my-4">
+          <span>Cloudy</span>
+          <span class="cloud">89%</span>
+        </li>
+        <li class="flex items-center justify-between my-4">
+          <span>Humidity</span>
+          <span class="humidity">89%</span>
+        </li>
+        <li class="flex items-center justify-between my-4">
+          <span>Wind</span>
+          <span class="wind">8 km/h</span>
+        </li>
+      </ul>
+    </div>
+    <!-- <div class="forecast-container">
+      <h3>5-Day Forecast</h3>
+      <div class="forecast-cards">
+      </div>
+  </div> -->
+  </div>
+  <style>
+    @media (max-width: 800px) {
+      .panel,
+      .container {
+        position: relative;
+        width: 100%;
+        top: initial;
+      }
+    }
+
+    @media (max-width:500px) {
+      html {
+        font-size: 12px;
+      }
+    }     
+  </style>
+
+ <script src="script.js" defer></script>
+</body>
+</html>
